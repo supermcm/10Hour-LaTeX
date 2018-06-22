@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}
+	\begin{axis}[xlabel={$x$},ylabel={$y$},title={$\sin x$ and $\cos x$}]
+	\addplot+[no markers,samples=100]{cos{deg(x)}};
+	\addlegendentry{$\cos x$}
+	\addplot+[no markers,samples=100,dashed]{sin{deg(x)}};
+	\addlegendentry{$\sin x$}
+	\end{axis}
+\end{tikzpicture}
+\caption{$\sin x$ and $\cos x$.}
+\end{figure}
+\end{document}

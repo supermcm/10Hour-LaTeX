@@ -1,0 +1,45 @@
+% !Mode:: "TeX:UTF-8"
+%!TEX program  = xelatex
+% xelatex + bibtex + xelatex + xelatex 
+% 代码修改自：https://github.com/latexstudio/CUMCMThesis
+
+\documentclass{cumcmthesis}
+%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+\usepackage{hyperref}
+ 
+\title{CT 成像系统模型与算法}
+\tihao{A}
+\baominghao{891125}
+\schoolname{大连大学}
+\memberc{周吕文}
+\membera{周吕文}
+\memberb{周吕文}
+\supervisor{周吕文}
+\yearinput{2017}
+\monthinput{08}
+\dayinput{22}
+
+\begin{document}
+\maketitle
+\input{sections/abstract}
+
+\tableofcontents %目录
+\newpage
+
+\input{sections/problem}
+\input{sections/assumption}
+\input{sections/notation}
+\input{sections/figtab}
+
+
+
+%参考文献
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{sections/biblo}
+
+%附录
+\newpage
+\appendix
+\input{sections/appendix}
+\end{document} 

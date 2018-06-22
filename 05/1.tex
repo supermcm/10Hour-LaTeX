@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+\section{Mathematical formula}
+$$\cos \alpha=\frac{1}{2} \qquad \sin\beta =\frac{\sqrt{3}}{2} \qquad \tan  \theta =1$$
+$$y^2=4 \qquad y=\pm 2$$
+$$a^x+y \neq a^{x+y}$$
+$$(a_1 +a_2)a_3=a_1 a_3+ a_2 a_3$$
+
+\section{Integral operator}
+$$\int x^2 \mathrm{d}x=\frac{x^3}{3}$$
+$$\int_0 ^1 x^2 \mathrm{d}x=\frac{1}{3}$$
+$$\int \frac{1}{x} \mathrm{d}x=\ln x$$
+$$\iint_D (x^2+y^2)\mathrm{d}x\mathrm{d}y$$
+$$\iiint(x^2+y^2+z^2)\mathrm{d}x\mathrm{d}y\mathrm{d}z$$
+\newcommand{\md}{\mathrm{d}}
+$$\int x^2 \md x=\frac{x^3}{3}$$
+$$\iiint(x+y+z)\md x \md y \md z$$
+
+\section{differential operator}
+$$y' + p(x)y +q(x)=0$$
+
+$$y'' + py' +qy=0$$
+
+$$\frac{\md y}{\md x}=2x$$
+
+$$\frac{\md ^2 y}{\md x^2} -x\frac{\md y}{\md x} +u=0$$
+
+$$\frac{\partial u}{\partial t} + t\frac{\partial u}{\partial x}=0$$
+
+$$\frac{\partial ^3 u}{\partial x^3}-6u\frac{\partial u}{\partial x} +\frac{\partial u}{\partial t}=0$$
+
+\section{Sum operator}
+$$\sum_{k=1} ^n k^2=\frac{1}{3} n^3 +\frac{1}{2} n^2 +\frac{1}{6} n$$
+
+$$\lim _{n \to \infty} \sum_{k=1} ^n \frac{1}{k^2}=\frac{\pi ^2}{6}$$
+
+\section{Array}
+\begin{displaymath}
+\left[\begin{array}{ccc}
+1&2&3\\
+4&5&6
+\end{array}\right]
+\end{displaymath}
+
+\begin{displaymath}
+\mathbf{H}_x=\frac{1}{3} \times \left[\begin{array}{ccc}
+1&0&2\\
+2&1&3\\
+3&2&1
+\end{array}\right]
+\end{displaymath}
+
+\begin{displaymath}
+\left[\begin{array}{cccc}
+1&2&\cdots &4\\
+5&6&\cdots &7\\
+\vdots &\vdots &\ddots &\vdots \\
+8&9&\cdots &0
+\end{array}\right]
+\end{displaymath}
+
+\begin{displaymath}
+y=\left\{\begin{array}{ll}
+a&d>1\\
+b+x&d\leq 1
+\end{array}\right.
+\end{displaymath}
+
+\section{eqnarray}
+\begin{eqnarray}
+\sin x &=& x-\frac{x^3}{3} +\frac{x^5}{5}- \frac{x^7}{7} +x-\frac{x^3}{3} +\frac{x^5}{5} \\ \nonumber
+           & &\frac{x^7}{7} x-\frac{x^3}{3} +\frac{x^5}{5}- \frac{x^7}{7} +x+\frac{x^5}{5} +\cdots
+\end{eqnarray}
+
+\setlength\arraycolsep{2pt}
+\begin{eqnarray}
+A&=&(x-y)(x+y)\\ \nonumber
+  &=&x^2-yx+xy-y^2\\ \nonumber
+  &=&x^2-y^2 
+\end{eqnarray}
+
+\section{align}
+\begin{align*}
+A&=(x-y)(x+y)\\ \nonumber
+  &=x^2-yx+xy-y^2\\ \nonumber
+  &=x^2-y^2 
+\end{align*}
+
+\begin{align*}
+f(x)&=\cos x \\
+f'(x)&=-\sin x \\
+f''(x)&=-cos x
+\end{align*}
+
+\end{document}

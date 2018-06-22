@@ -1,0 +1,89 @@
+\usetikzlibrary{arrows,calc,intersections}
+
+
+\def\r{4}
+\def\n{8} \def\myangles{{25,50,85,125,160,220,250,280,340}}
+%This vector contains the angles determining the position of the points.
+%-----------------------------------------------------------
+% Variables and counters used to generate the 4-combinations
+\newcounter{np} \pgfmathsetcounter{np}{\n+1}
+\newcounter{na} \newcounter{nb} \newcounter{nc}
+\newcounter{ia} 
+\pgfmathsetcounter{na}{\n-1}    % saves some computations later
+\pgfmathsetcounter{nb}{\n-2}    % ""
+\pgfmathsetcounter{nc}{\n-3}    %   ""
+\newcounter{q} \setcounter{q}{0}    % if flag q=1 then exit the whiledo loop
+\newcounter{e} \setcounter{e}{0}    % e counts the combinations!
+\newcounter{a} \setcounter{a}{0}    % element of the 4-combination
+\newcounter{b} \setcounter{b}{1}    % ""
+\newcounter{c} \setcounter{c}{2}    % ""
+\newcounter{d} \setcounter{d}{2}    % ""
+%Watch out! The initial value {0,1,2,2} is not a 4-combination
+\begin{tikzpicture}[scale=0.7,font=\footnotesize]
+    % Draw the complete graph
+    \fill[fill=blue!10!green!10!,draw=blue,dotted,thick] (0,0) circle (\r);
+    \pgfmathparse{\n-1} \let\nn\pgfmathresult 
+    \foreach \i in {0,...,\nn}{
+        \pgfmathparse{\i+1} \let\ii\pgfmathresult
+        \pgfmathparse{\myangles[\i]} \let\t\pgfmathresult
+        \foreach \j in {\ii,...,\n}
+            \pgfmathparse{\myangles[\j]} \let\u\pgfmathresult
+            \draw[blue,very thick] ({\r*cos(\t)},{\r*sin(\t)})--({\r*cos(\u)},{\r*sin(\u)});
+        }
+    \foreach \i in {0,...,\n}{
+        \pgfmathparse{\myangles[\i]}    \let\t\pgfmathresult
+        \pgfmathsetcounter{ia}{\i+1}
+        \fill[draw=blue,fill=blue!20!,thick]
+                ({\r*cos(\t)},{\r*sin(\t)})circle (2.5mm) node{$\mathbf{\theia}$};
+        }
+        % Points and segments are now drawn
+        %
+    \whiledo{\theq=0}{ % this loop generates the 4-combinations
+        \stepcounter{e}
+        \ifthenelse{\thee=1000}{\setcounter{q}{1}}{}% just to be sure to get out of the loop some day...
+        \ifthenelse{\thed=\n}
+            {\ifthenelse{\thec=\thena}
+                {\ifthenelse{\theb=\thenb}
+                    {\ifthenelse{\thea=\thenc}
+                        {\setcounter{q}{1}}
+                        {   \stepcounter{a}
+                            \pgfmathsetcounter{b}{\thea+1}
+                            \pgfmathsetcounter{c}{\thea+2}
+                            \pgfmathsetcounter{d}{\thea+3}                  
+                        }
+                    }
+                    {   \stepcounter{b}
+                        \pgfmathsetcounter{c}{\theb+1}
+                        \pgfmathsetcounter{d}{\theb+2}                      
+                    }
+                }
+                {   \stepcounter{c}
+                    \pgfmathsetcounter{d}{\thec+1}
+                }
+            }
+            {\stepcounter{d}}
+        \ifthenelse{\theq=0}{
+            % Construction of the intersection points of the segments
+            \pgfmathparse{\r*cos(\myangles[\thea])} \let\xa\pgfmathresult
+            \pgfmathparse{\r*sin(\myangles[\thea])} \let\ya\pgfmathresult
+            \pgfmathparse{\r*cos(\myangles[\theb])} \let\xb\pgfmathresult
+            \pgfmathparse{\r*sin(\myangles[\theb])} \let\yb\pgfmathresult
+            \pgfmathparse{\r*cos(\myangles[\thec])} \let\xc\pgfmathresult
+            \pgfmathparse{\r*sin(\myangles[\thec])} \let\yc\pgfmathresult
+            \pgfmathparse{\r*cos(\myangles[\thed])} \let\xd\pgfmathresult
+            \pgfmathparse{\r*sin(\myangles[\thed])} \let\yd\pgfmathresult
+            %               
+            \coordinate  (A) at (\xa,\ya);
+            \coordinate  (B) at (\xb,\yb);
+            \coordinate  (C) at (\xc,\yc);
+            \coordinate  (D) at (\xd,\yd);
+            % Name the coordinates, but do not draw anything!               
+            \path[name path=sega] (A) -- (C);
+            \path[name path=segb] (B) -- (D);
+            \path [name intersections={of=sega and segb}];
+            \coordinate (X) at (intersection-1);
+            \fill[fill=green!50!,draw=blue] (X) circle (0.8mm);             
+            %-----------------------------------------------------
+            }{}
+    }% End of the whiledo loop
+\end{tikzpicture}

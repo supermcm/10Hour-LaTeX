@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}                          
+\moderncvcolor{blue}                              
+\usepackage[scale=0.81]{geometry}
+\usepackage{xeCJK}
+\renewcommand{\refname}{发表论文}
+
+% personal data
+\name{周吕文}{}
+\title{个人简历}                               
+\address{北京市~海淀区~北四环西路15号}{中国科学院力学研究所}{100190}
+\phone[mobile]{+86~158~8888~8888}
+\email{zhoulvwen@imech.ac.cn}                      
+\extrainfo{中共党员\\男, 汉, 19xx年x月生} 
+\photo[64pt][0.4pt]{picture} 
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+\begin{document}
+\makecvtitle
+
+\vspace{-3em}
+\section{教育背景}
+\cventry{2006--2010}{大连大学}{物理科学与技术学院}{物理学}{本科}{}{}  % arguments 3 to 6 can be left empty
+\cventry{2011--2017}{中国科学院力学研究所}{工程力学}{博士}{}{}
+
+
+\section{计算机技术}
+\cventry{操作系统} {Linux, Windows}{}{}{}{}{}
+\cventry{编程语言} {MatLab (精通), Fortran (精通), Python (熟悉), C/C++ (熟悉)}{}{}{}{}{}
+%\cventry{办公软件} {\LaTeX, MS Office, MS Excell, MS PowPoint}{}{}{}{}{}
+\cventry{模型算法}{元胞自动机、分子动力学、格子玻尔兹曼、图论、模拟退火、遗传算法等}{}{}{}{}
+\section{经历}
+\subsection{社团经历}
+\cventry{2008--2010}{大连大学数学建模工作室学生负责人}{}{}{}{}
+
+\subsection{科研项目}
+\cventry{2011-2013}{健康/癌变乳腺细胞微流道内迁移动力学模拟}{}{}{}{}
+\cventry{2014-2015}{重力矢量导向作用下动物细胞力学稳定性重建的理论建模}{}{}{}{}
+\cventry{2016-2017}{力学-化学模型构建及其在白细胞极化, 变形与迁移}{}{}{}{}
+
+\subsection{竞赛指导}
+\cventry{2011-2017}{全国大学生数学建模竞赛}{指导多位学生获得一等奖}{包含一个Matlab创新奖}{}{}
+\cventry{2011-2017}{美国大学生数学建模竞赛}{指导多位学生获得一等奖}{包含一个F奖}{}{}
+\subsection{书籍编写}
+\cventry{2015}{《大学生数学建模竞赛指南》}{电子工业出版社}{参与策划和编写}{并任副主编}{}
+
+%\newpage
+\section{部分奖励}
+\cventry{2011-2016} {中国科学院大学三好学生}{分别于2011-2012, 2012-2013, 2015-2016三次获得}{}{}{}{}
+\cventry{2010} {大连大学十佳创新大学生}{全校每年只评出十名}{}{}{}{}
+\cventry{2010} {美国大学生数学建模大赛}{一等奖}{参赛队队长}{}{}{}
+\cventry{2009} {大连市高等数学竞赛}{一等奖}{}{}{}{}
+\cventry{2008} {``挑战杯''全国大学生创业计划大赛}{省二等奖}{团队负责人}{}{}{}
+\cventry{2008-2009} {大连市政府奖学金}{}{}{}{}{}
+\cventry{2006-2009} {大连大学创新奖学金}{连续三年获得}{}{}{}{}
+\cventry{2005} {全国中学生奥林匹克物理竞赛}{省级二等奖}{}{}{}{}
+
+
+\newpage
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{publications}
+\end{document}
+

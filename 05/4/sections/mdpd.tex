@@ -1,0 +1,15 @@
+\section{Methodology of the dissipative particle dynamics}\label{sec:mdpd}
+This paper investigated the transport and conformation of macromolecules in microchannels using the dissipative particle DPD and finite extensible nonlinear FENE based spring chains model.  This paper investigated the transport and conformation.
+\begin{equation}
+\frac{\mathrm{d}r_i}{\mathrm{d}t}=v_i,\qquad
+\frac{\mathrm{d}v_i}{\mathrm{d}t}=\sum_{j \neq i}^N {f_{{ij}_i}^{ext}}
+\end{equation}
+Where $r_i$ and $v_i$ denote the position and velocity of particle $i$.
+
+\begin{equation}
+\mathrm{F}_{ij}^C=
+\left\{\begin{array}{ll}
+a_{ij}(1-r_{ij})&r_{ij}<r_C\\
+0&r_{ij}\geq r_C
+\end{array}\right.
+\end{equation}

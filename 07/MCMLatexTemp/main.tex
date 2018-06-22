@@ -1,0 +1,48 @@
+% !Mode:: "TeX:UTF-8"
+
+% Latex temp for COMAP Mathematical Contest in Modeling.
+% zhou lvwen: zhou.lv.wen@gmail.com
+% https://ke.qq.com/course/265507
+
+\documentclass[tcn = 0000, problem = A, abstract = false]{mcmthesis}
+
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{palatino}
+\usepackage{lipsum}
+\usepackage{longtable}
+
+\title{Your MCM/ICM paper Title}
+\date{February 11, 2018}
+
+\begin{document}
+
+%summary
+\input{sections/summary}
+
+\maketitle
+
+%-------------------------------------------------------
+% Contents
+\tableofcontents\newpage
+
+%-------------------------------------------------------
+% Main Body
+\input{sections/introduction}
+\input{sections/section}
+\input{sections/citation}
+\input{sections/equation}
+\input{sections/item}
+\input{sections/table}
+\input{sections/figure}
+
+%-------------------------------------------------------
+% References
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{biblo}
+\newpage
+
+%-------------------------------------------------------
+% Appendix
+\input{sections/appendix}
+\end{document}

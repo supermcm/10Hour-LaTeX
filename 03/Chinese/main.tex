@@ -1,0 +1,47 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[11pt,a4paper]{article}
+\usepackage{appendix}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=simhei.ttf]{simsun.ttf}
+
+\renewcommand\contentsname{\bf 目录}
+\renewcommand\figurename{\bf 图}
+\renewcommand\tablename{\bf 表}
+\renewcommand\refname{参考文献}
+
+\renewcommand\appendixtocname{附录}
+\renewcommand\appendixpagename{附录}
+\newtheorem{theorem}{定理}[section]
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\begin{document}
+\title{论文标题}
+\author{作者}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+
+\newpage
+\section{引言}
+
+这是一份\textbf{中文}文档
+
+\begin{figure}
+
+\caption{中文图题}
+\end{figure}
+
+
+\begin{theorem}[万有引力定律]
+一切物体之间存在相互吸引的作用，此作用与两物体质量成正比，与其距离的平方成反比。
+\end{theorem}
+
+
+\newpage
+\appendix
+\appendixpage
+\addappheadtotoc
+\section{代码}\label{app:title}
+\end{document}

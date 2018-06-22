@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+
+
+\begin{document}
+\section{Theorem}
+Theorems can be easily defined.
+\newtheorem{theorem}{Theorem}[section]
+\begin{theorem}
+This is a simple theorem about rectangles, which can be defined as the next equation $$c^2=a^2+b^2$$
+\end{theorem}
+\begin{theorem}
+This is a simple theorem.
+\end{theorem}
+
+\subsection{Theorem}
+Theorem \ref{thm:light} gives you some information of the light speed.
+\newtheorem{mythm}{My Theorem}[subsection]
+\begin{mythm}[Light speed]\label{thm:light}
+The light speed in vaccum is $299,792,458\ \mathrm{m/s}$.
+\end{mythm}
+
+
+
+\end{document}
